@@ -64,14 +64,24 @@ app.get('/',
 
 app.get('/login',
   function(req, res){
-    res.render('login');
+    if (!req.user) {
+      res.render('login');
+    }
+    else {
+      res.redirect('upload');
+    }
+  });
+
+app.get('/upload',
+  function(req, res){
+    res.render('upload');
   });
 
 app.post('/login',
-  passport.authenticate('local', { failureRedirect: 'logout' }),
-  function(req, res) {
-    res.render('upload');
-  });
+  passport.authenticate('local', {
+   successRedirect: 'upload',
+   failureRedirect: 'logout'
+  }));
 
 app.get('/logout',
   function(req, res){
