@@ -1,0 +1,13 @@
+<section>
+  <article>
+
+      <ul ng-controller="GalleryCtrl" id="photos">
+        <li ng-repeat="image in images | filter:query">
+          <a ng-click="openLightboxModal($index)">
+            <img ng-src="images/{{image.thumbUrl}}.jpg" class="img-thumbnail">
+          </a>
+        </li>
+      </ul>
+
+  </article>
+</section>

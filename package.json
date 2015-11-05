@@ -1,0 +1,14 @@
+{
+  "name": "jsproject",
+  "version": "1.0.0",
+  "description": "javascript project",
+  "main": "index.js",
+  "scripts": {
+    "test": "peter"
+  },
+  "author": "peter tumulty",
+  "license": "ISC",
+  "dependencies": {
+    "angular-bootstrap-lightbox": "^0.10.0"
+  }
+}

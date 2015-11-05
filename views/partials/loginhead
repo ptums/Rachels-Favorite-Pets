@@ -1,0 +1,10 @@
+<meta charset="UTF-8">
+<title>Rachel Pet's Site</title>
+<!-- CSS (load bootstrap from a CDN) -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/angular-bootstrap-lightbox.min.css" rel="stylesheet" type="text/css">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+<script src="javascript/angularapp.js"></script>
+<script src="javascript/ui-bootstrap-tpls-0.14.3.min.js"></script>
+<script src="javascript/angular-bootstrap-lightbox.min.js"></script>

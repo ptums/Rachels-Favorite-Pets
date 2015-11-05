@@ -1,0 +1,67 @@
+body {
+  padding-top: 50px;
+  background: -moz-linear-gradient(90deg, #F2CAB3 0, #D98B8B 100%);/* FF3.6+ */
+  background: -webkit-gradient(linear, 90deg, color-stop(0, F2CAB3), color-stop(100%, D98B8B));/* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(90deg, #F2CAB3 0, #D98B8B 100%);/* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(90deg, #F2CAB3 0, #D98B8B 100%);/* Opera 11.10+ */
+  background: -ms-linear-gradient(90deg, #F2CAB3 0, #D98B8B 100%);/* IE10+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
+  background: linear-gradient(90deg, #F2CAB3 0, #D98B8B 100%);/* W3C */
+  font-family: Tahoma;
+}
+.row{
+  margin-left:15px; margin-right:15px;
+}
+li{
+  list-style-type:none;
+  display:inline;
+}
+.search-margin{
+  margin-top:220px;
+}
+.search-width{
+  width:300px !important;
+}
+.centertron{
+  margin-left:100px;
+  margin-right:30px;
+}
+#photos {
+  /* Prevent vertical gaps */
+  line-height: 0;
+
+  -webkit-column-count: 5;
+  -webkit-column-gap:   0px;
+  -moz-column-count:    5;
+  -moz-column-gap:      0px;
+  column-count:         5;
+  column-gap:           0px;
+}
+#photos img {
+  /* Just in case there are inline attributes */
+  width: 100% !important;
+  height: auto !important;
+}
+.less-margin{
+  margin-top:-20px !important;
+}
+/*Image animation */
+img {
+	position: relative;
+	right: 0;
+	bottom: 0;
+	padding: 0;
+	margin: 0;
+	border-radius: 0;
+	-webkit-transition: right 0.2s ease-in-out, bottom 0.2s ease-in-out, padding 0.2s ease-in-out, margin 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+	-moz-transition: right 0.2s ease-in-out, bottom 0.2s ease-in-out, padding 0.2s ease-in-out, margin 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+	-o-transition: right 0.2s ease-in-out, bottom 0.2s ease-in-out, padding 0.2s ease-in-out, margin 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+	transition: right 0.2s ease-in-out, bottom 0.2s ease-in-out, padding 0.2s ease-in-out, margin 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+}
+img:hover {
+	right: 7px;
+	bottom: 4px;
+	padding: 3px;
+	margin: 2px;
+	border-radius: 7px;
+}

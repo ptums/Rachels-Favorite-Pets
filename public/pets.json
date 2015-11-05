@@ -1,0 +1,113 @@
+[
+  {
+    "thumbUrl": "dog1",
+    "url": "images/dog1bg.jpg",
+    "type" : "dog",
+    "width": 300,
+    "height":200
+
+},
+{
+  "thumbUrl": "dog2",
+  "url": "images/dog2bg.jpg",
+  "type" : "dog",
+  "width": 300,
+  "height":200
+
+},
+{
+  "thumbUrl": "alpaca1",
+  "url": "images/alpaca1bg.jpg",
+  "type" : "alpaca",
+  "width": 300,
+  "height":409
+
+},
+{
+  "thumbUrl": "alpaca2",
+  "url": "images/alpaca2bg.jpg",
+  "type" : "alpaca",
+  "width": 300,
+  "height":198
+
+},
+{
+  "thumbUrl": "alpaca3",
+    "url": "images/alpaca3bg.jpg",
+  "type" : "alpaca",
+  "width": 215,
+  "height":235
+
+},
+{
+  "thumbUrl": "alpaca4",
+  "url": "images/alpaca4bg.jpg",
+  "type" : "alpaca",
+  "width": 259,
+  "height":194
+
+},
+{
+  "thumbUrl": "dog3",
+  "url": "images/dog3bg.jpg",
+  "type" : "dog",
+  "width": 284,
+  "height":177
+
+},{
+  "thumbUrl": "dog4",
+  "url": "images/dog4bg.jpg",
+  "type" : "dog",
+  "width": 259,
+  "height":194
+
+},
+{
+  "thumbUrl": "dog5",
+  "url": "images/dog5bg.jpg",
+  "type" : "dog",
+  "width": 275,
+  "height":183
+
+},
+{
+  "thumbUrl": "dog6",
+  "url": "images/dog6bg.jpg",
+  "type" : "dog",
+  "width": 284,
+  "height":177
+
+},
+{
+  "thumbUrl": "sloth1",
+  "url": "images/sloth1bg.jpg",
+  "type" : "sloth",
+  "width": 300,
+  "height":355
+
+},
+{
+  "thumbUrl": "sloth2",
+  "url": "images/sloth2bg.jpg",
+  "type" : "sloth",
+  "width": 300,
+  "height":238
+
+},
+{
+  "thumbUrl": "sloth3",
+  "url": "images/sloth3bg.jpg",
+  "type" : "sloth",
+  "width": 300,
+  "height":466
+
+},
+{
+  "thumbUrl": "sloth4",
+  "url": "images/sloth4bg.jpg",
+  "type" : "sloth",
+  "width": 300,
+  "height":200
+
+}
+]

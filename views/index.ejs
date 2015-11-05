@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <% include partials/head %>
+</head>
+<body class="container">
+
+    <header>
+      <% include partials/animatedbanner.ejs %>
+      <% include partials/header.ejs %>
+    </header>
+    <main>
+      <section class="row">
+
+              <article class="jumbotron col-xs-12 col-md-10 centertron">
+                  <div>
+                    <a href="/login">Login</a>
+                    <% include partials/search.ejs %>
+                </div>
+              </article>
+      </section>
+      <footer>
+
+        <% include partials/footer %>
+      </footer>
+    </main>
+
+
+
+</body>
+</html>
