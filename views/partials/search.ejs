@@ -6,6 +6,7 @@
           <a ng-click="openLightboxModal($index)">
             <img ng-src="/images/{{image}}" class="img-thumbnail">
           </a>
+          <a class="deletion-link" ng-click="delete(image, $index)">Delete</a>
         </li>
       </ul>
 
