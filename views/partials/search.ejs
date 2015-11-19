@@ -4,7 +4,7 @@
       <ul ng-controller="GalleryCtrl" id="photos">
         <li ng-repeat="image in images | filter:query">
           <a ng-click="openLightboxModal($index)">
-            <img ng-src="images/{{image.thumbUrl}}.jpg" class="img-thumbnail">
+            <img ng-src="/images/{{image}}" class="img-thumbnail">
           </a>
         </li>
       </ul>
