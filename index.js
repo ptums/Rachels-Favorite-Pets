@@ -1,9 +1,10 @@
 var express = require('express');
 var passport = require('passport');
 var fs = require('fs');
+var _ = require('underscore');
 var multer  = require('multer');
 var upload = multer({
-  dest: 'upload',
+  dest: 'public/images',
   rename: function(fieldname, filename) {
         return filename;
     },
@@ -80,9 +81,20 @@ app.get('/login',
     }
   });
 
+
 app.get('/upload',
   function(req, res){
     res.render('upload');
+  });
+
+/**
+ * List
+ */
+app.get('/api/pets',
+  function(req, res){
+    fs.readdir( 'public/images', function (err, files) {
+      res.send(files);
+    });
   });
 
 //Receive files uploaded on the upload page
@@ -90,7 +102,7 @@ app.post('/file-upload',
   upload.single('image'), function (req, res, next) {
 
     //Rename files after they are uploaded
-    fs.rename(req.file.path, 'upload/' + req.file.originalname);
+    fs.rename(req.file.path, 'public/images/' + req.file.originalname);
 
     //Return to the upload form for more uploading
     res.redirect('upload');
