@@ -15,4 +15,9 @@ $http.get('/api/pets')
   $scope.openLightboxModal = function (index) {
     Lightbox.openModal($scope.images, index);
   };
+
+  $scope.delete = function (filename, index) {
+    $scope.images.splice(index, 1);
+    $http.post('/delete', {"image": filename});
+  };
 });

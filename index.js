@@ -3,6 +3,7 @@ var passport = require('passport');
 var fs = require('fs');
 var _ = require('underscore');
 var multer  = require('multer');
+var bodyParser = require("body-parser");
 var upload = multer({
   dest: 'public/images',
   rename: function(fieldname, filename) {
@@ -64,7 +65,7 @@ passport.use(new LocalStrategy(
   app.use(passport.session());
 
 
-// Define routes.
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
 /**
@@ -136,6 +137,14 @@ app.get('/api/pets',
       res.send(files);
     });
   });
+
+/**
+ * Allow deletion of a photo
+ */
+app.post('/delete', function (req, res){
+  // console.log(req.body.image);
+  fs.unlink('public/images/' + req.body.image);
+});
 
 
 app.listen(3000);
