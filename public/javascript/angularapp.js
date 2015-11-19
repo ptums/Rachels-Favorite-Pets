@@ -17,7 +17,13 @@ $http.get('/api/pets')
   };
 
   $scope.delete = function (filename, index) {
-    $scope.images.splice(index, 1);
-    $http.post('/delete', {"image": filename});
+    if (confirm("Are you sure you want to delete: \n\n" + filename + "?")) {
+      $http.post('/delete', {"image": filename}).then(function successCallback(res){
+        $scope.images.splice(index, 1);
+      },
+      function errorCallback(res){
+        alert('Could not delete photo.  Please try again later.');
+      });
+    }
   };
 });

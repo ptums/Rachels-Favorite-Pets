@@ -14,7 +14,10 @@
 
               <article class="jumbotron col-xs-12 col-md-10 centertron">
                   <div>
-                    <a href="/login">Login</a>
+                    <% var user = user || null %>
+                    <% if (!user) { %>
+                      <a href="/login">Login</a>
+                    <% } %>
                     <% include partials/search.ejs %>
                 </div>
               </article>

@@ -142,8 +142,14 @@ app.get('/api/pets',
  * Allow deletion of a photo
  */
 app.post('/delete', function (req, res){
-  // console.log(req.body.image);
-  fs.unlink('public/images/' + req.body.image);
+  if (req.user) {
+    fs.unlink('public/images/' + req.body.image);
+    res.send('yes');
+  }
+  else {
+    //todo, does this work?
+    res.send('no');
+  }
 });
 
 
