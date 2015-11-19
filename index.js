@@ -66,11 +66,18 @@ passport.use(new LocalStrategy(
 
 // Define routes.
 app.use(express.static('public'));
+
+/**
+ * Homepage
+ */
 app.get('/',
   function(req, res) {
     res.render('index', { user: req.user });
   });
 
+/**
+ * User login page
+ */
 app.get('/login',
   function(req, res){
     if (!req.user) {
@@ -81,23 +88,35 @@ app.get('/login',
     }
   });
 
+/**
+ * Handle submission of the user login form
+ */
+app.post('/login',
+  passport.authenticate('local', {
+   successRedirect: 'upload',
+   failureRedirect: 'logout'
+  }));
 
+/**
+ * Allow the user to logout
+ */
+app.get('/logout',
+  function(req, res){
+    req.logout();
+     res.render('index');
+  });
+
+/**
+ * Generate the image upload page
+ */
 app.get('/upload',
   function(req, res){
     res.render('upload');
   });
 
 /**
- * List
+ * Handle submission of the file upload form
  */
-app.get('/api/pets',
-  function(req, res){
-    fs.readdir( 'public/images', function (err, files) {
-      res.send(files);
-    });
-  });
-
-//Receive files uploaded on the upload page
 app.post('/file-upload',
   upload.single('image'), function (req, res, next) {
 
@@ -108,16 +127,16 @@ app.post('/file-upload',
     res.redirect('upload');
   });
 
-app.post('/login',
-  passport.authenticate('local', {
-   successRedirect: 'upload',
-   failureRedirect: 'logout'
-  }));
-
-app.get('/logout',
+/**
+ * List all the photos currently in the system
+ */
+app.get('/api/pets',
   function(req, res){
-    req.logout();
-     res.render('index');
+    fs.readdir( 'public/images', function (err, files) {
+      res.send(files);
+    });
   });
+
+
 app.listen(3000);
 console.log("its alive!!!!!");
