@@ -12,7 +12,19 @@
   <input type="file" name="image">
   <input type="submit">
 </form>
-<a href="/logout">Logout</a>
+<a href="/logout">Logout</a><br>
+<section>
+  <article>
+        <h3>Images To Delete</h3>
+      <ul ng-controller="GalleryCtrl" id="photos">
+                <li ng-repeat="image in images">
+            <img ng-src="/images/{{image}}" style="width:30%;">
+            <a class="deletion-link" ng-click="delete(image, $index)">Delete</a>
+        </li>
+      </ul>
+
+  </article>
+</section>
 <footer>
 
 	<% include partials/footer %>
