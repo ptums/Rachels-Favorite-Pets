@@ -44,3 +44,6 @@ Temporary Items
 
 #Ignore file uploads
 uploads/*
+
+#Ignore settings file
+settings.js
