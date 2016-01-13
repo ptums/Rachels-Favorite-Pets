@@ -4,7 +4,7 @@
   "description": "javascript project",
   "main": "index.js",
   "scripts": {
-    "test": "peter"
+    "start": "node index.js"
   },
   "author": "peter tumulty",
   "license": "ISC",
@@ -12,5 +12,9 @@
     "angular-bootstrap-lightbox": "^0.10.0",
     "fs": "0.0.2",
     "multer": "^1.1.0"
-  }
+  },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/ptums/JSProject-2015"
+},
 }
