@@ -1,5 +1,8 @@
 var express = require('express');
 var passport = require('passport');
+var settings = require('./settings');
+// settings.credentials().db_name
+var mysql = require("mysql");
 var fs = require('fs');
 var _ = require('underscore');
 var multer  = require('multer');
@@ -120,12 +123,36 @@ app.get('/upload',
  */
 app.post('/file-upload',
   upload.single('image'), function (req, res, next) {
+    if (req.user) {
+  
+      //Get the database username and password
+      var connection = mysql.createConnection(settings.credentials());
 
-    //Rename files after they are uploaded
-    fs.rename(req.file.path, 'public/images/' + req.file.originalname);
+      //Open a connection to the database
+      connection.connect();
 
-    //Return to the upload form for more uploading
-    res.redirect('upload');
+      //Write to the database
+      connection.query('INSERT INTO images SET ?', {path: req.file.originalname}, function(err, result) {
+        if (err) {
+          throw err;
+        }
+        else {
+          //Rename files after they are uploaded
+          fs.rename(req.file.path, 'public/images/' + req.file.originalname);
+
+          //Return to the upload form for more uploading
+          res.redirect('upload');
+        }
+      });
+
+      //Close the database connection
+      connection.end()
+      
+    }
+    else {
+      res.send('no');
+    }
+
   });
 
 /**
@@ -133,9 +160,23 @@ app.post('/file-upload',
  */
 app.get('/api/pets',
   function(req, res){
-    fs.readdir( 'public/images', function (err, files) {
-      res.send(files);
+
+    //Get the database username and password
+    var connection = mysql.createConnection(settings.credentials());
+
+    //Open a connection to the database
+    connection.connect();
+
+    //Write to the database
+    connection.query('SELECT path FROM images', function(err, result){
+      _.each(result, function(item, index, list){
+        result[index] = item.path;
+      });
+      res.send(result);
     });
+
+    //todo, cache this
+
   });
 
 /**
@@ -144,6 +185,13 @@ app.get('/api/pets',
 app.post('/delete', function (req, res){
   if (req.user) {
     fs.unlink('public/images/' + req.body.image);
+
+    //Delete from the database
+    //@todo make this work
+    // var connection = mysql.createConnection(settings.credentials());
+    // connection.connect();
+    // connection.query('DELETE FROM images WHERE path="' + req.body.image + '"')
+
     res.send('yes');
   }
   else {
