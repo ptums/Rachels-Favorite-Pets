@@ -13,12 +13,12 @@ Rachel's Favorite Pets is my very first project saved on github. I don't think I
 ## Technology
 
 ### Built with
-    * Bootstrap   
-    * Angular 1.x
-    * Express.js
-    * Multer.js
-    * Passport.js
-    * MySQL
+  * Bootstrap   
+  * Angular 1.x
+  * Express.js
+  * Multer.js
+  * Passport.js
+  * MySQL
 
 ## Credits
 
