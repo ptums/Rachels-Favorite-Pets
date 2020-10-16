@@ -12,7 +12,7 @@ Rachel's Favorite Pets is my very first project saved on github. I don't think I
 
 ## Technology
 
-**Built with**
+### Built with
     * Bootstrap   
     * Angular 1.x
     * Express.js
