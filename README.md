@@ -8,7 +8,7 @@ Rachel's Favorite Pets is my very first project saved on github. I don't think I
 
 ## Build status
 
-This application has been archived ![Not maintained](https://img.shields.io/maintenance/no/2015?style=for-the-badge)
+![Not maintained](https://img.shields.io/maintenance/no/2015?style=for-the-badge)
 
 ## Technology
 
