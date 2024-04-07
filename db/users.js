@@ -1,21 +1,18 @@
-var records = [
-    { id: 1, username: 'rachel', password: 'torgua1', displayName: 'Rachel', emails: [ { value: 'rconfuco@gmail.com' } ] }
-  , { id: 2, username: 'peter', password: 'peter', displayName: 'Peter', emails: [ { value: 'ptumulty923@gmail.com' } ] }
-];
+var records = [];
 
-exports.findById = function(id, cb) {
-  process.nextTick(function() {
+exports.findById = function (id, cb) {
+  process.nextTick(function () {
     var idx = id - 1;
     if (records[idx]) {
       cb(null, records[idx]);
     } else {
-      cb(new Error('User ' + id + ' does not exist'));
+      cb(new Error("User " + id + " does not exist"));
     }
   });
-}
+};
 
-exports.findByUsername = function(username, cb) {
-  process.nextTick(function() {
+exports.findByUsername = function (username, cb) {
+  process.nextTick(function () {
     for (var i = 0, len = records.length; i < len; i++) {
       var record = records[i];
       if (record.username === username) {
@@ -24,4 +21,4 @@ exports.findByUsername = function(username, cb) {
     }
     return cb(null, null);
   });
-}
+};
